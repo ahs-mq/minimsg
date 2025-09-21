@@ -4,6 +4,7 @@ const app = express();
 const PORT = 3000;
 
 app.set("views", path.join(__dirname, "views"));
+app.use(express.static(__dirname)); //serve css from root of project
 app.set('view engine', 'ejs');
 //express.urlencoded() is a method inbuilt in express to recognize the incoming Request Object as strings or arrays
 app.use(express.urlencoded({ extended: true }));

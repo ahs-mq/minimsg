@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title><%= title %></title>
 </head>
 <body>
-    <ul>
-  <% messages.forEach((msg) => { %> 
-    <li>User: <%= msg.user %></li>
-    <li>Text: <%= msg.text %></li>
-    <li>Date: <%= msg.added %></li>
-  <% }) %>
-</ul>
-<a href="./new">New Message</a>
+  <h1>Messages</h1>
+  <div class="messages">
+    <% messages.forEach((msg) => { %>
+      <div class="message">
+        <p><strong>User:</strong> <%= msg.user %></p>
+        <p><strong>Text:</strong> <%= msg.text %></p>
+        <p><strong>Date:</strong> <%= new Date(msg.added).toLocaleString() %></p>
+      </div>
+    <% }) %>
+  </div>
+
+  <a href="/new">New Message</a>
 </body>
-</html> 
+</html>
