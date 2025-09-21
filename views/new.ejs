@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello!</h1>
+    <form method="POST" action="/new">
+        <input type="text" name="user" placeholder="Your Username" required />
+        <input type="text" name="text" placeholder="Your Text" required />
+        <button type="submit">Submit</button>
+    </form>
+    <a href="./index.ejs">Back to Home</a>
 </body>
 </html>
